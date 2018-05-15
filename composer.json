@@ -1,5 +1,5 @@
 {
-    "name": "allegro/php-protobuf",
+    "name": "jacknoordhuuis/php-protobuf",
     "description": "Google's Protocol Buffers for PHP",
     "type": "library",
     "keywords": [
@@ -9,8 +9,8 @@
     ],
     "homepage": "https://github.com/allegro/php-protobuf",
     "autoload": {
-        "psr-0": {
-            "": "stubs"
+        "psr-4": {
+            "": "src"
         }
     },
     "authors": [
@@ -25,6 +25,12 @@
             "email": "mateusz.gajewski@allegro.pl",
             "homepage": "https://github.com/wendigo",
             "role": "Contributor"
+        },
+        {
+            "name": "Jack Noordhuis",
+            "email": "me@jacknoordhuis.net",
+            "homepage": "https://github.com/JackNoordhuis",
+            "role": "Contributor"
         }
     ],
     "support": {
@@ -34,5 +40,8 @@
         "php": ">=5.3",
         "pear/console_commandline": "^1.2"
     },
-    "license": "BSD-3-Clause"
+    "license": "BSD-3-Clause",
+    "bin": [
+        "protoc-gen-php"
+    ]
 }

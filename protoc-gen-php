@@ -1,0 +1,12 @@
+#!/usr/bin/env php
+<?php
+
+/**
+ * A wrapper class around the generation script to provide an executable through composer
+ */
+
+if(file_exists($file = (__DIR__ . '/protoc-gen-php.php'))) {
+    require_once $file;
+} else {
+    echo "Unable to find the '{$file}' entry script." . PHP_EOL . PHP_EOL;
+}
