@@ -33,7 +33,30 @@ PHP Protobuf is Google's Protocol Buffers implementation for PHP with a goal to 
     ```
     composer install
     ```
+    
+### Global Composer installation
+1. Locate your global composer directory (usually ~/.composer)
 
+1. Add the git repository to the composer.json
+    ```
+    "repositories": [
+        {
+            "type": "vcs",
+            "url": "https://github.com/JackNoordhuis/php-protobuf"
+        }
+    ]
+    ```
+
+1. Add the library as a global dependency
+     ```
+    "require": [
+        "jacknoordhuis/php-protobuf": "dev-master"
+    ]
+    ```
+
+1. Finally, run `composer global update` to install the required dependencies
+
+1. You can now run the `protoc-gen-php` command from anywhere
 ### Usage
 
 1. Assume you have a file `foo.proto`
