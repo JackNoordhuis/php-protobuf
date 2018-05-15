@@ -5,8 +5,19 @@
  * A wrapper class around the generation script to provide an executable through composer
  */
 
-if(file_exists($file = (__DIR__ . '/protoc-gen-php.php'))) {
-    require_once $file;
+if(file_exists(__DIR__ . '/../../autoload.php')) {
+    require_once __DIR__.'/../../autoload.php';
+} elseif(file_exists(__DIR__ . '/vendor/autoload.php')) {
+	require_once __DIR__.'/vendor/autoload.php';
 } else {
-    echo "Unable to find the '{$file}' entry script." . PHP_EOL . PHP_EOL;
+	echo '[ERROR] The dependencies are not installed. Run "composer install" in order to install them.' . PHP_EOL . PHP_EOL;
+	exit(1);
 }
+
+if(!extension_loaded('protobuf')) {
+	Allegro\Protobuf\Compiler\Logger::error('protobuf module is not installed.');
+	exit(1);
+}
+
+$compiler = new Allegro\Protobuf\Compiler\Compiler();
+$compiler->run(__FILE__);
