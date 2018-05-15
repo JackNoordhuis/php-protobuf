@@ -1,5 +1,5 @@
 {
-    "name": "jacknoordhuuis/php-protobuf",
+    "name": "jacknoordhuis/php-protobuf",
     "description": "Google's Protocol Buffers for PHP",
     "type": "library",
     "keywords": [
